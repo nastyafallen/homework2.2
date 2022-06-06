@@ -1,6 +1,6 @@
 package com.company;
 
-public class Hogwarts {
+public abstract class Hogwarts {
     private String name;
     private String surname;
     private String house;
@@ -15,10 +15,30 @@ public class Hogwarts {
         this.teleportation = teleportation;
     }
 
+    public void comparingStudents(Hogwarts hogwarts) {
+        if (getPowerOfStudent() == hogwarts.getPowerOfStudent()) {
+            System.out.println("Силы этих учеников равны");
+        } else {
+            if (getPowerOfStudent() > hogwarts.getPowerOfStudent()) {
+                System.out.println(getName() + " сильнее, чем " + hogwarts.getName());
+            }
+            if (getPowerOfStudent() < hogwarts.getPowerOfStudent()) {
+                System.out.println(getName() + " слабее, чем " + hogwarts.getName());
+            }
+        }
+
+    }
+
     @Override
     public String toString() {
         return "Имя - " + name + ", фамилия - " + surname + ", факультет - " + house + ", сила магии = " + powerOfMagic + ", расстояние трансгресии = " + teleportation;
     }
+
+    public int getPowerOfStudent() {
+        int powerOfStudentHogwarts = powerOfMagic + teleportation;
+        return powerOfStudentHogwarts;
+    }
+
 
     public int getPowerOfMagic() {
         return powerOfMagic;

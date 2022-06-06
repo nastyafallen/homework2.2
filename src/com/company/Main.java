@@ -16,9 +16,8 @@ public class Main {
         Ravenclaw student11 = new Ravenclaw("Padma", "Patil", "Ravenclaw", 70, 67, 82, 81, 85);
         Ravenclaw student12 = new Ravenclaw("Marcus", "Belby", "Ravenclaw", 68, 68, 73, 79, 80);
 
-        System.out.println(student9.toString());
-
-        student4.comparingSlytherin(student5);
-
+        student6.comparingStudents(student1); // Проверка
+        student11.comparingRavenclaw(student12); // Проверка
+        System.out.println(student4); // Проверка
     }
 }

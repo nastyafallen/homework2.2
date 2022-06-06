@@ -12,9 +12,31 @@ public class Gryffindor extends Hogwarts {
         this.courage = courage;
     }
 
+    public void comparingGryffindor(Gryffindor gryffindor) {
+        if (this == gryffindor) {
+            System.out.println("Это один и тот же ученик");
+        } else {
+            if (getPowerOfStudent() == gryffindor.getPowerOfStudent()) {
+                System.out.println("Силы этих учеников равны");
+            } else {
+                if (getPowerOfStudent() > gryffindor.getPowerOfStudent()) {
+                    System.out.println(getName() + " сильнее, чем " + gryffindor.getName());
+                }
+                if (getPowerOfStudent() < gryffindor.getPowerOfStudent()) {
+                    System.out.println(getName() + " слабее, чем " + gryffindor.getName());
+                }
+            }
+        }
+    }
+
+    public int getPowerOfStudent() {
+        int powerOfStudent = nobility + honor + courage;
+        return powerOfStudent;
+    }
+
     @Override
     public String toString() {
-        return "Имя - " + getName() + ", фамилия - " + getSurname() + ", факультет - " + getHouse() + ", сила магии = " + getPowerOfMagic() + ", расстояние трансгресии = " + getTeleportation() + "," + System.lineSeparator() + "благородство - " + nobility + ", честь - " + honor + ", храбрость - " + courage + ".";
+        return super.toString() + "," + System.lineSeparator() + "благородство - " + nobility + ", честь - " + honor + ", храбрость - " + courage + ".";
     }
 
     public int getNobility() {

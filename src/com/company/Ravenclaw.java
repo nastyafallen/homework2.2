@@ -12,9 +12,31 @@ public class Ravenclaw extends Hogwarts{
         this.creativity = creativity;
     }
 
+    public void comparingRavenclaw(Ravenclaw ravenclaw) {
+        if (this == ravenclaw) {
+            System.out.println("Это один и тот же ученик");
+        } else {
+            if (getPowerOfStudent() == ravenclaw.getPowerOfStudent()) {
+                System.out.println("Силы этих учеников равны");
+            } else {
+                if (getPowerOfStudent() > ravenclaw.getPowerOfStudent()) {
+                    System.out.println(getName() + " сильнее, чем " + ravenclaw.getName());
+                }
+                if (getPowerOfStudent() < ravenclaw.getPowerOfStudent()) {
+                    System.out.println(getName() + " слабее, чем " + ravenclaw.getName());
+                }
+            }
+        }
+    }
+
+    public int getPowerOfStudent() {
+        int powerOfStudent = wisdom + wit + creativity;
+        return powerOfStudent;
+    }
+
     @Override
     public String toString() {
-        return "Имя - " + getName() + ", фамилия - " + getSurname() + ", факультет - " + getHouse() + ", сила магии = " + getPowerOfMagic() + ", расстояние трансгресии = " + getTeleportation() + "," + System.lineSeparator() + "мудрость - " + wisdom + ", остроумие - " + wit + ", способность к творчеству - " + creativity + ".";
+        return super.toString() + "," + System.lineSeparator() + "мудрость - " + wisdom + ", остроумие - " + wit + ", способность к творчеству - " + creativity + ".";
     }
 
     public int getWisdom() {
